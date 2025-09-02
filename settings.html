@@ -1,5 +1,22 @@
-<div style="padding: 15px;">
+<div style="padding: 15px; color: #eee;">
   <h2>Custom Tags Styler</h2>
-  <p>Настройки внешнего вида тегов.</p>
-  <button onclick="alert('Настройки в разработке')">Сохранить</button>
+
+  <h3>Выберите пресет:</h3>
+  <select id="preset-select">
+    <option value="">—</option>
+    <option value="default">Default</option>
+    <option value="dark">Dark</option>
+    <option value="pastel">Pastel</option>
+  </select>
+  <button id="apply-preset">Применить</button>
+
+  <h3>Настройка тегов</h3>
+  <div id="tag-settings"></div>
+
+  <button id="add-tag">Добавить тег</button>
+  <button id="save-settings">Сохранить</button>
+  <button id="reset-settings">Сбросить</button>
 </div>
+
+<script src="presets.js"></script>
+<script src="settings.js"></script>
