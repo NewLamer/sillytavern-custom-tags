@@ -1,27 +1,7 @@
-.custom-tag {
+/* Base styles for custom tags - specific styles are injected dynamically */
+.custom-tag-base {
     padding: 10px;
     margin: 8px 0;
     border-radius: 4px;
     font-family: sans-serif;
-}
-
-.custom-tag.special {
-    background: #fff3cd;
-    border-left: 4px solid #ffc107;
-}
-
-.custom-tag.note {
-    background: #d1ecf1;
-    border-left: 4px solid #0dcaf0;
-}
-
-.custom-tag.warning {
-    background: #f8d7da;
-    border-left: 4px solid #dc3545;
-}
-
-.custom-tag.secret {
-    background: #e2e3e5;
-    border-left: 4px solid #6c757d;
-    font-style: italic;
 }
