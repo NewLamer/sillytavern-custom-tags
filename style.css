@@ -1,7 +1,7 @@
-/* Base styles for custom tags - specific styles are injected dynamically */
-.custom-tag-base {
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 4px;
-    font-family: sans-serif;
+.custom-tag.special {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
 }
