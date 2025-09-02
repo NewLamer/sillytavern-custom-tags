@@ -1,7 +1,6 @@
-.custom-tag.special {
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
+.custom-tag {
   padding: 10px;
-  margin: 10px 0;
+  margin: 8px 0;
   border-radius: 4px;
+  font-family: sans-serif;
 }
