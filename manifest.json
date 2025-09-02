@@ -1,9 +1,13 @@
 {
-  "name": "Custom Tags Styler",
+  "display_name": "Custom Tags Styler",
+  "loading_order": 100,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "css": "style.css",
+  "settings": "settings.html",
+  "settings_js": "settings.js",
+  "author": "NewLamer",
   "version": "1.0.0",
-  "description": "Расширение для стилизации пользовательских тегов в SillyTavern",
-  "author": "Ваше имя или ник",
-  "main": "extension.js",
-  "scripts": ["settings.html"],
-  "styles": ["styles.css"]
+  "homePage": "https://github.com/NewLamer/sillytavern-custom-tags"
 }
