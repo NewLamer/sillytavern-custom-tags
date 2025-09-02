@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Tags Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #1e1e1e;
+      color: #eee;
+    }
+    input, select, button {
+      margin: 5px 0;
+      padding: 6px;
+    }
+    .tag-setting {
+      border: 1px solid #444;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Custom Tags Styler — Настройки</h2>
+  <div id="settings-container"></div>
+  <button id="save-btn">Сохранить стили</button>
+  <button id="reset-btn">Сбросить</button>
+
+  <script>
+    const tags = ['special', 'note', 'warning', 'secret'];
+    const defaultStyles = {
+      special: { bg: '#fff3cd', border: '#ffc107' },
+      note: { bg: '#d1ecf1', border: '#0dcaf0' },
+      warning: { bg: '#f8d7da', border: '#dc3545' },
+      secret: { bg: '#e2e3e5', border: '#6c757d' }
+    };
+
+    function renderSettings() {
+      const container = document.getElementById('settings-container');
+      container.innerHTML = '';
+
+      tags.forEach(tag => {
+        const div = document.createElement('div');
+        div.className = 'tag-setting';
+        div.innerHTML = `
+          <h3>${tag}</h3>
+          <label>Фон: <input type="color" data-tag="${tag}" data-prop="bg" value="${defaultStyles[tag].bg}"></label><br>
+          <label>Рамка: <input type="color" data-tag="${tag}" data-prop="border" value="${defaultStyles[tag].border}"></label>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.getElementById('save-btn').addEventListener('click', () => {
+      let css = '';
+      document.querySelectorAll('input').forEach(input => {
+        const tag = input.dataset.tag;
+        const prop = input.dataset.prop;
+        const color = input.value;
+        if (prop === 'bg') {
+          css += `.custom-tag.${tag} { background: ${color}; }\n`;
+        } else if (prop === 'border') {
+          css += `.custom-tag.${tag} { border-left: 4px solid ${color}; }\n`;
+        }
+      });
+
+      localStorage.setItem('customTagStyles', JSON.stringify(css));
+      alert('Стили сохранены!');
+    });
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      localStorage.removeItem('customTagStyles');
+      alert('Стили сброшены. Перезагрузите SillyTavern.');
+    });
+
+    renderSettings();
+  </script>
+</body>
+</html>

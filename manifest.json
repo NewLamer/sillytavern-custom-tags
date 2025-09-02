@@ -1,0 +1,9 @@
+{
+  "name": "Custom Tags Styler",
+  "version": "1.0.0",
+  "description": "Расширение для стилизации пользовательских тегов в SillyTavern",
+  "author": "Ваше имя или ник",
+  "main": "extension.js",
+  "scripts": ["settings.html"],
+  "styles": ["styles.css"]
+}
